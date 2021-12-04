@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>%HOSTNAME% - Homepage</title>
+        <meta name="viewport" charset="UTF-8" content="width=device-width, initial-scale=1">
+        <style>
+            html {font-family: Arial; display: inline-block; text-align: center; font-size: 11px}
+            
+            body {max-width: 600px; margin:0px auto; padding-bottom: 10px;}
+            #pagetitle {font-size: 3.6em; color: #89CFF0; text-decoration: underline}
+            #branding {font-size: 1.4em; color: #FC8C80; margin-top: 30px}
+            .switchcontrol {margin: 30px}
+            .switchlabel {font-size: 2em; color: #89CFF0}
+            .switch {position: relative; display: inline-block; width: 120px; height: 68px} 
+            .switch input {display: none}
+            .slider {position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-color: #ccc; border-radius: 34px}
+            .slider:before {position: absolute; content: ""; height: 52px; width: 52px; left: 8px; bottom: 8px; background-color: #fff; -webkit-transition: .4s; transition: .4s; border-radius: 68px}
+            .container {display: grid; grid-template-columns: repeat(auto-fit, 200px); align-items: center; justify-content: center; border: 2px solid #89CFF0; border-radius: 5px; margin: 25px;}
+            input:checked+.slider {background-color: #2196F3}
+            input:checked+.slider:before {-webkit-transform: translateX(52px); -ms-transform: translateX(52px); transform: translateX(52px)}
+        </style>
+        <script>function toggleSwitch(element, output) {
+            var xhr = new XMLHttpRequest();
+            if(element.checked){ 
+            xhr.open("GET", "/api?output=" + output + "&state=1", true);  
+            }
+            else { 
+            xhr.open("GET", "/api?output=" + output + "&state=0", true);      
+            }
+            xhr.send();
+            }
+            function website_logout() {
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", "/logout", true);
+            xhr.send();
+            setTimeout(function(){ window.open("/logged-out","_self"); }, 1000);
+            }
+        </script>
+    </head>
+    <body>
+        <p id="pagetitle">%HOSTNAME%</p>
+        <div class="container">
+            %GPIO_OUTPUT%
+        </div>
+        <button onclick="website_logout()">Logout</button>
+        <p id="branding">Made with &#128151<br>by Rik Heijmann</p>
+    </body>
+</html>

@@ -35,3 +35,15 @@ To be honest, this is not a philosophy. I recommend splitting code in different 
  1. The webserver library does not work with HTTPS. We should either wait for a fix or implement a different library. See: https://github.com/me-no-dev/AsyncTCP/pull/90
   - This one seems great. But to make this sketch ESP32 compatible and EPS8266 compatible we would have to implement both in the same script.
 
+
+## Installation:
+1. Download and extract the latest release. Keep the folder structure. The data folder should inside of 
+2. Download and install each library as noted within the "Super-ESP.ino"-file,
+3. Open the "Super-ESP.ino" file within the Arduino IDE.
+
+## Configuration:
+- The sketch can be configured using "data/configuration.json". This contains the dynamic variables. Dynamic as in these can be changed using the API.
+- The sketch can alse be configured using the static variables. These are defined at line 67 of "Super-ESP.ino" (search for "Static configuration". Static variables control the compilation of the code or have to be defined globally.
+- The perfect place for adding your own "void setup()"-code is near line 855 of "Super-ESP.ino". (search for "Custom boot routine").
+
+

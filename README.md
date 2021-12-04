@@ -18,7 +18,7 @@ It allows us to:
  - It provides stability by checking for corrupt configurations and trying multiple times to connect to WiFi, NTP and MQTT.
 
 
-## What is it not?
+## What it isn't not?
  A preconfigured script to automatically hookup your sensor/devices. You will have to program them manually. This is just a head start, in comparison to beginning from an empty sketch.
  
 

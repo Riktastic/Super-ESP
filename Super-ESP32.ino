@@ -15,7 +15,7 @@
 // License?
 
 // Super-ESP, a template to easily configure your ESP32
-// Copyright (C) 2021 Rik Heijmann
+// Copyright (C) 2021 https://github.com/Riktastic
 //
 // This program is free software; you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
